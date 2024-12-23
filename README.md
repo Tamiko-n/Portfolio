@@ -61,6 +61,8 @@ portfolio-website/
 
 6. Adjust the color scheme by modifying the CSS custom properties in the `:root` selector in `style.css`.
 
+7. Add your CV and Whatsapp number. 
+
 ## Customization
 
 - **Colors**: Modify the CSS custom properties in the `:root` selector to change the color scheme.
