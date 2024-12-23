@@ -1,0 +1,438 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+:root {
+    --primary: #39ff14;
+    --secondary: #00ff00;
+    --background: #000000;
+    --text: #ffffff;
+    --card-bg: rgba(57, 255, 20, 0.1);
+    --gradient: linear-gradient(45deg, var(--primary), var(--secondary));
+    --shadow-primary: 0 0 20px var(--primary);
+    --shadow-secondary: 0 0 20px var(--secondary);
+}
+
+.light {
+    --primary: #39ff14;
+    --secondary: #00ff00;
+    --background: #ffffff;
+    --text: #000000;
+    --card-bg: rgba(57, 255, 20, 0.05);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body {
+    width: 100%;
+    background-color: var(--background);
+    color: var(--text);
+}
+
+nav {
+    width: 100%;
+    height: 10vh;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.nav-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.logo {
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.logo span {
+    color: var(--primary);
+    text-shadow: 0 0 10px var(--primary);
+}
+
+.hamburg,
+.cancel {
+    cursor: pointer;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    color: white;
+    display: none;
+    font-size: clamp(2.5rem, 0.5rem + 5vw, 3rem);
+}
+
+.nav-container .links {
+    display: flex;
+}
+
+.nav-container .links a {
+    position: relative;
+    font-size: 1.2rem;
+    color: white;
+    margin: 0 20px;
+    text-decoration: none;
+    font-weight: 550;
+    transition: 0.3s linear;
+}
+
+.nav-container .links a::before {
+    position: absolute;
+    content: "";
+    bottom: -3px;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background-color: var(--primary);
+    transition: 0.2s linear;
+}
+
+.nav-container .links a:hover::before {
+    width: 100%;
+}
+
+.nav-container .links a:hover {
+    color: var(--primary);
+}
+
+.dropdown {
+    z-index: 100;
+    position: absolute;
+    top: 0;
+    transform: translateY(-500px);
+    width: 100%;
+    height: auto;
+    backdrop-filter: blur(4px) brightness(40%);
+    box-shadow: 0 0 20px black;
+    transition: 0.2s linear;
+}
+
+.dropdown .links a {
+    display: flex;
+    color: white;
+    text-decoration: none;
+    justify-content: center;
+    padding: 15px 0;
+    align-items: center;
+    transition: 0.2s linear;
+}
+
+.dropdown .links a:hover {
+    background-color: var(--primary);
+}
+
+section {
+    width: 100%;
+    min-height: 100vh;
+    padding: 80px 0;
+}
+
+section h2 {
+    color: var(--primary);
+    text-shadow: 0 0 10px var(--primary);
+    margin-bottom: 40px;
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+.main-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.main-container .image {
+    width: 500px;
+    height: 80vh;
+    border-radius: 100%;
+    overflow: hidden;
+    box-shadow: 0 0 50px var(--primary);
+}
+
+.main-container .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.main-container .image:hover {
+    animation: animate 1.5s ease-in-out infinite;
+}
+
+@keyframes animate {
+    0% {
+        scale: 1;
+    }
+    50% {
+        scale: 1.05;
+    }
+    100% {
+        scale: 1;
+    }
+}
+
+.main-container .content {
+    color: white;
+    width: 40%;
+    min-height: 100px;
+}
+
+.content h1 {
+    font-size: clamp(1rem, 1rem + 5vw, 1.8rem);
+}
+
+.content h1 span {
+    color: var(--primary);
+    text-shadow: 0 0 10px var(--primary);
+}
+
+.content .typewriter {
+    font-size: clamp(1rem, 1rem + 5vw, 2.5rem);
+    font-weight: 600;
+}
+
+.content .typewriter-text {
+    color: var(--primary);
+    text-shadow: 0 0 10px var(--primary);
+}
+
+.content p {
+    font-size: clamp(0.4rem, 0.2rem + 9vw, 1rem);
+    margin: 10px 0;
+}
+
+.social-links i {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    height: 3rem;
+    background-color: transparent;
+    border: 0.2rem solid var(--primary);
+    border-radius: 50%;
+    color: var(--icon-color, var(--primary));
+    margin: 5px 15px;
+    font-size: 1.5rem;
+    transition: 0.2s linear;
+}
+
+.social-links i:hover {
+    scale: 1.3;
+    color: black;
+    background-color: var(--primary);
+    filter: drop-shadow(0 0 10px var(--primary));
+}
+
+.social-links .fa-leetcode {
+    --icon-color: #FFA116;
+}
+
+.content button {
+    width: 50%;
+    height: 6vh;
+    margin: 30px;
+    background-color: var(--primary);
+    color: black;
+    border: none;
+    outline: none;
+    font-size: 120%;
+    font-weight: 700;
+    border-radius: 5px;
+    transition: 0.2s linear;
+}
+
+.content button:hover {
+    scale: 1.1;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+    background-color: transparent;
+    font-weight: 700;
+    box-shadow: 0 0 40px var(--primary);
+}
+
+#about, #skills, #projects, #contact {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+#about p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.skills-container, .projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.skill-card, .project-card {
+    width: 250px;
+    height: 300px;
+    perspective: 1000px;
+}
+
+.skill-front, .skill-back, .project-front, .project-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    transition: transform 0.6s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    box-shadow: 0 0 10px var(--primary);
+}
+
+.skill-back, .project-back {
+    transform: rotateY(180deg);
+    overflow-y: auto;
+}
+
+.skill-card:hover .skill-front, .project-card:hover .project-front {
+    transform: rotateY(180deg);
+}
+
+.skill-card:hover .skill-back, .project-card:hover .project-back {
+    transform: rotateY(0deg);
+}
+
+.skill-front h3, .project-front h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: var(--primary);
+}
+
+.progress-bar {
+    width: 100%;
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    background-color: var(--primary);
+    transition: width 0.5s ease-in-out;
+}
+
+.skill-back p, .project-back p {
+    font-size: 0.9rem;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.project-back ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.project-back li {
+    font-size: 0.8rem;
+    margin-bottom: 5px;
+}
+
+#contact p {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+#contact a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+#contact a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 884px) {
+    nav .logo {
+        position: absolute;
+        top: 16px;
+        left: 15px;
+        font-size: 1.5rem;
+    }
+
+    .main-container {
+        flex-direction: column;
+        height: auto;
+        padding: 50px 0;
+    }
+
+    .nav-container .links {
+        display: none;
+    }
+
+    .hamburg,
+    .cancel {
+        display: block;
+    }
+
+    .main-container .content {
+        width: 80%;
+        text-align: center;
+    }
+
+    .social-links i {
+        width: 2.5rem;
+        height: 2.5rem;
+        font-size: 1.5rem;
+    }
+
+    .main-container .image {
+        width: 50%;
+        height: auto;
+        aspect-ratio: 1 / 1;
+        margin-bottom: 30px;
+    }
+
+    .skills-container, .projects-container {
+        justify-content: center;
+    }
+
+    .skill-card, .project-card {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 440px) {
+    .main-container .image {
+        width: 70%;
+    }
+
+    .main-container .content {
+        width: 90%;
+    }
+
+    .main-container button {
+        width: 70%;
+        margin: 15px auto;
+    }
+
+    section h2 {
+        font-size: 2rem;
+    }
+}
+
