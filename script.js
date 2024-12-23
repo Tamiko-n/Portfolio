@@ -22,13 +22,13 @@ var typed = new Typed(".typewriter-text", {
 })
 
 function openWhatsApp() {
-    window.open('https://wa.me/923188465567', '_blank');
+    window.open('https://wa.me/234567889', '_blank');
 }
 
 function downloadCV() {
     const link = document.createElement('a');
-    link.href = 'TAMIA NAEEM CV.pdf';
-    link.download = 'TAMIA NAEEM CV.pdf';
+    link.href = 'your CV.pdf';
+    link.download = 'your CV.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
