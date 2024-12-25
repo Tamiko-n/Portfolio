@@ -18,7 +18,7 @@ This project is a modern, responsive portfolio website designed for a software d
 1. **Responsive Design**: Fully responsive layout that looks great on desktop, tablet, and mobile devices.
 
 2. **Interactive UI Elements**: 
-   - Animated skill cards with flip effect
+   - Animated skill cards with flip effect.
    - Project cards with hover effect to reveal more details
    - Typewriter effect for dynamic text display
 
